@@ -1,14 +1,9 @@
 package com.gmail.dimaliahov.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-
+import lombok.Data;
 import java.util.Date;
 
-@Getter
-@Setter
-@AllArgsConstructor
+@Data
 public class ClaendarTreck {
     
         private int id;
