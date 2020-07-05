@@ -1,8 +1,8 @@
 package com.gmail.dimaliahov.repository;
 
 import com.gmail.dimaliahov.model.Teacher;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 
-public interface TeacherRepository extends JpaRepository<Teacher, Long> {
+public interface TeacherRepository extends CrudRepository<Teacher, Long> {
 
 }
