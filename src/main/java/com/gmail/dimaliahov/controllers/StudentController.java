@@ -2,10 +2,7 @@ package com.gmail.dimaliahov.controllers;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.gmail.dimaliahov.model.Student;
-import com.gmail.dimaliahov.model.Teacher;
 import com.gmail.dimaliahov.repository.StudentRepository;
-import com.gmail.dimaliahov.repository.TeacherRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
