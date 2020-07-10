@@ -1,4 +1,4 @@
-package com.gmail.dimaliahov.model.additional;
+package com.gmail.dimaliahov.model.Enamu;
 
 public enum Role {
 

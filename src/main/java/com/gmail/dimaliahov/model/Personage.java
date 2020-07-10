@@ -1,8 +1,8 @@
 package com.gmail.dimaliahov.model;
 
 import com.gmail.dimaliahov.model.additional.CalendarTracker;
-import com.gmail.dimaliahov.model.additional.Role;
-import com.gmail.dimaliahov.model.additional.Subject;
+import com.gmail.dimaliahov.model.Enamu.Role;
+import com.gmail.dimaliahov.model.Enamu.Subject;
 import lombok.Data;
 
 import javax.persistence.*;

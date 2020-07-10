@@ -29,10 +29,10 @@ public class PersonageController {
         this.personageRepository = teacherRepository;
     }
 
-    @RequestMapping("jsonT")
+    @RequestMapping("json")
     public void json (){
         //записали json дані з ресурсів
-        URL url =  this.getClass().getClassLoader().getResource("teacher.json");
+        URL url =  this.getClass().getClassLoader().getResource("personage.json"); // ALERT нове потім написать
         if (url != null){
             File jsonFile = new File(url.getFile());
             ObjectMapper objectMapper = new ObjectMapper();
@@ -49,14 +49,18 @@ public class PersonageController {
 
     }
 
-    //Написать новий JSON адміна, вчителя, студента.
+    //Написать новий один JSON з разними ролями. адміна, вчителя, студента.
 
-    // урл для створення студента
+    // урл для створення
     // урл для редагування
     // урл для видалення
+    // Витягти ліст по РОЛІ
     // (особистий кабінет) урл де можно вибрати викладача (+ бачить ціну за час)
-    // Додати поле де вказана ціна за час
+
+    // Особистий кабінет щось придумать що там має бути
+
     // Після вибору викладача, має бути вибір доступної дати (підтвердження)
-    // Урл особистого кабінету студента де можно побачити список підтверджених завдань, та ті які не підтверджені
-    //
+    // Урл особистого кабінету  де можно побачити список СТАТУСУ завдань
+
+
 }
