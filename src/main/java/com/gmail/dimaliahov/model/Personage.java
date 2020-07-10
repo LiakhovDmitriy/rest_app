@@ -1,5 +1,8 @@
 package com.gmail.dimaliahov.model;
 
+import com.gmail.dimaliahov.model.additional.CalendarTracker;
+import com.gmail.dimaliahov.model.additional.Role;
+import com.gmail.dimaliahov.model.additional.Subject;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -42,7 +45,7 @@ public class Personage {
     private String password;
 
     @Column (name = "listCalendar")
-    private List<CalendarTreack> listCalendar; // Списком в моделі лежатимуть заняття, і в студента і в викладача.
+    private List<CalendarTracker> listCalendar; // Списком в моделі лежатимуть заняття, і в студента і в викладача.
     //Треба зробить так що ссилка на обєкт listCalendar була однакова і в викладача і в студента.
 
 
