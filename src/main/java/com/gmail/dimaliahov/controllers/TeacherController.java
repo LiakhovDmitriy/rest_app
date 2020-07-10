@@ -22,7 +22,6 @@ public class TeacherController {
 
     private final static Logger logger = LoggerFactory.getLogger(TeacherController.class);
 
-
     private TeacherRepository teacherRepository;
 
     @Autowired

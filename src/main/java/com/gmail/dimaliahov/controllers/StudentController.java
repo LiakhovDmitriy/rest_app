@@ -21,7 +21,6 @@ import java.util.List;
 public class StudentController {
     private final static Logger logger = LoggerFactory.getLogger(TeacherController.class);
 
-
     private StudentRepository studentRepository;
 
     @Autowired
@@ -40,7 +39,6 @@ public class StudentController {
             try {
                 List<Student> students = objectMapper.readValue(jsonFile, new TypeReference<List<Student>>(){});
                 studentRepository.saveAll(students);
-
                 logger.info("All record saved.");
             } catch (IOException e) {
                 e.printStackTrace();
@@ -49,4 +47,13 @@ public class StudentController {
             logger.warn("Url is null");
         }
     }
+
+    // урл для створення студента
+    // урл для редагування
+    // урл для видалення
+    // (особистий кабінет) урл де можно вибрати викладача (+ бачить ціну за час)
+            // Додати поле де вказана ціна за час
+    // Після вибору викладача, має бути вибір доступної дати (підтвердження)
+    // Урл особистого кабінету студента де можно побачити список підтверджених завдань, та ті які не підтверджені
+    //
 }

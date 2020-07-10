@@ -12,24 +12,31 @@ public class Teacher {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column (name = "id")
     private long id;
+
+    @Column (name = "name")
     private String name;
+
+    @Column (name = "surname")
     private String surname;
+
+    @Column (name = "password")
     private String password;
+
+    @Column (name = "txt")
     private String txt;
+
+    @Column (name = "cash")
     private int cash;
+
+    @Column (name = "mail")
     private String mail;
-//    private List<CalendarTreack> listCalendar;
 
+    @Column (name = "listCalendar")
+    private List<CalendarTreack> listCalendar;
 
-    public Teacher() {
-        super();
-    }
-
-    public Teacher(long id, String surname) {
-        this.id = id;
-        this.surname = surname;
-    }
-
+    // Додать поле для предмету який викладає викладач (Походу зроблю ЕНАМ доступних предметів)
+    //
 
 }
