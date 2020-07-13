@@ -2,12 +2,15 @@ package com.gmail.dimaliahov.controllers;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.gmail.dimaliahov.dao.JdbcTemplatePersonageDaoImpl;
 import com.gmail.dimaliahov.model.Personage;
 
 import com.gmail.dimaliahov.repository.PersonageRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,6 +26,13 @@ public class PersonageController {
     private final static Logger logger = LoggerFactory.getLogger(PersonageController.class);
 
     private PersonageRepository personageRepository;
+
+    ApplicationContext context =
+            new ClassPathXmlApplicationContext("jdbctemplate-personage-config.xml");
+
+    JdbcTemplatePersonageDaoImpl jdbcTemplateDeveloperDao =
+            (JdbcTemplatePersonageDaoImpl) context.getBean("jdbcTemplatePersonageDao");
+
 
     @Autowired
     public PersonageController(PersonageRepository teacherRepository){
@@ -46,6 +56,16 @@ public class PersonageController {
         } else {
             logger.warn("Url is null");
         }
+
+    }
+
+    @RequestMapping("list")
+    public void showList (){
+        List personage = jdbcTemplateDeveloperDao.listPersonages();
+        for (Object personages : personage) {
+            System.out.println(personage);
+        }
+
 
     }
 
