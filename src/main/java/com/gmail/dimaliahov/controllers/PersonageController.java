@@ -29,7 +29,7 @@ public class PersonageController {
     @RequestMapping("json")
     public void json (){
         //записали json дані з ресурсів
-        URL url =  this.getClass().getClassLoader().getResource("personage.json"); // ALERT нове потім написать
+        URL url =  this.getClass().getClassLoader().getResource("personage.json");
         if (url != null){
             File jsonFile = new File(url.getFile());
             ObjectMapper objectMapper = new ObjectMapper();

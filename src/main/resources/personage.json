@@ -2,6 +2,7 @@
   {
     "name": "Sandy",
     "surname": "De Caroli",
+    "role": "TEACHER",
     "nal": 1,
     "cost": 2002,
     "email": "hatena.ne.jp",
@@ -11,6 +12,7 @@
   {
     "name": "Dilly",
     "surname": "Dyche",
+    "role": "TEACHER",
     "nal": 2,
     "cost": 1992,
     "email": "paypal.com",
@@ -20,6 +22,7 @@
   {
     "name": "Ewart",
     "surname": "Farington",
+    "role": "TEACHER",
     "nal": 3,
     "cost": 2003,
     "email": "spiegel.de",
@@ -29,6 +32,7 @@
   {
     "name": "Pip",
     "surname": "Hertwell",
+    "role": "TEACHER",
     "nal": 4,
     "cost": 2000,
     "email": "statcounter.com",
@@ -38,6 +42,7 @@
   {
     "name": "Alfi",
     "surname": "Stain",
+    "role": "TEACHER",
     "nal": 5,
     "cost": 1967,
     "email": "prlog.org",

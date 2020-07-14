@@ -1,15 +1,15 @@
 package com.gmail.dimaliahov.controllers;
 
+import com.gmail.dimaliahov.exception.ResourceNotFoundException;
 import com.gmail.dimaliahov.model.Personage;
 import com.gmail.dimaliahov.repository.PersonageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
-import javax.persistence.Convert;
+import javax.validation.Valid;
 
 @RestController
 public class AdminController {
@@ -17,10 +17,44 @@ public class AdminController {
     @Autowired
     private PersonageRepository personageRepository;
 
-    @RequestMapping("/questions")
+
+
+    // Достать всих
+    @RequestMapping("/pesonages")
     public Page<Personage> getAll(Pageable pageable) {
         return personageRepository.findAll(pageable);
     }
+
+
+    // Створить Одного
+    @PostMapping("/pesonages")
+    public Personage createPersonage(@Valid @RequestBody Personage personage){
+        return personageRepository.save(personage);
+    }
+
+    // Достать одного
+    @PutMapping("/pesonages/{personageId}")
+    public Personage updatePersonage(@PathVariable Long personageId,
+                                     @Valid @RequestBody Personage personageRequast) {
+        return personageRepository.findById(personageId)
+                .map(question -> {
+                    question.setName(personageRequast.getName());
+                    question.setSurname(personageRequast.getSurname());
+                    return personageRepository.save(question);
+                }).orElseThrow(() -> new ResourceNotFoundException("Question not found with id " + personageId));
+    }
+
+
+    // Удалить
+    @DeleteMapping("/pesonages/{personageId}")
+    public ResponseEntity<?> deletePersonage(@PathVariable Long personageId) {
+        return personageRepository.findById(personageId)
+                .map(personage -> {
+                    personageRepository.delete(personage);
+                    return ResponseEntity.ok().build();
+                }).orElseThrow(() -> new ResourceNotFoundException("Question not found with id " + personageId));
+    }
+
 
 
     //Для ролі Адмін
