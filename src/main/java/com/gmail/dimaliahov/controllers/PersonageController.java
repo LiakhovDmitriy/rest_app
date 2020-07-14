@@ -2,15 +2,12 @@ package com.gmail.dimaliahov.controllers;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.gmail.dimaliahov.dao.JdbcTemplatePersonageDaoImpl;
 import com.gmail.dimaliahov.model.Personage;
 
 import com.gmail.dimaliahov.repository.PersonageRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,21 +20,11 @@ import java.util.List;
 @RestController
 public class PersonageController {
 
-    private final static Logger logger = LoggerFactory.getLogger(PersonageController.class);
-
+    @Autowired
     private PersonageRepository personageRepository;
 
-    ApplicationContext context =
-            new ClassPathXmlApplicationContext("jdbctemplate-personage-config.xml");
+    private final static Logger logger = LoggerFactory.getLogger(PersonageController.class);
 
-    JdbcTemplatePersonageDaoImpl jdbcTemplateDeveloperDao =
-            (JdbcTemplatePersonageDaoImpl) context.getBean("jdbcTemplatePersonageDao");
-
-
-    @Autowired
-    public PersonageController(PersonageRepository teacherRepository){
-        this.personageRepository = teacherRepository;
-    }
 
     @RequestMapping("json")
     public void json (){
@@ -47,8 +34,8 @@ public class PersonageController {
             File jsonFile = new File(url.getFile());
             ObjectMapper objectMapper = new ObjectMapper();
             try {
-                List<Personage> teachers= objectMapper.readValue(jsonFile, new TypeReference<List<Personage>>(){});
-                personageRepository.saveAll(teachers);
+                List<Personage> personage = objectMapper.readValue(jsonFile, new TypeReference<List<Personage>>(){});
+                personageRepository.saveAll(personage);
                 logger.info("All record saved.");
             } catch (IOException e) {
                 e.printStackTrace();
@@ -61,10 +48,6 @@ public class PersonageController {
 
     @RequestMapping("list")
     public void showList (){
-        List personage = jdbcTemplateDeveloperDao.listPersonages();
-        for (Object personages : personage) {
-            System.out.println(personage);
-        }
 
 
     }

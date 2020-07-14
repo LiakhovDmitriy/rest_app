@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Sandy",
+    "surname": "De Caroli",
+    "nal": 1,
+    "cost": 2002,
+    "email": "hatena.ne.jp",
+    "txt": "commodo placerat praesent blandit nam nulla integer pede justo lacinia",
+    "password": "h9VuW9lie"
+  },
+  {
+    "name": "Dilly",
+    "surname": "Dyche",
+    "nal": 2,
+    "cost": 1992,
+    "email": "paypal.com",
+    "txt": "venenatis lacinia aenean sit amet justo morbi ut odio cras mi pede malesuada in imperdiet et commodo vulputate",
+    "password": "oU7uNtk"
+  },
+  {
+    "name": "Ewart",
+    "surname": "Farington",
+    "nal": 3,
+    "cost": 2003,
+    "email": "spiegel.de",
+    "txt": "pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet",
+    "password": "fMpIA4hYQi"
+  },
+  {
+    "name": "Pip",
+    "surname": "Hertwell",
+    "nal": 4,
+    "cost": 2000,
+    "email": "statcounter.com",
+    "txt": "vestibulum sagittis sapien cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus etiam vel augue",
+    "password": "IIxmx4wBd"
+  },
+  {
+    "name": "Alfi",
+    "surname": "Stain",
+    "nal": 5,
+    "cost": 1967,
+    "email": "prlog.org",
+    "txt": "integer aliquet massa id lobortis convallis tortor risus dapibus augue vel accumsan tellus nisi eu orci mauris lacinia sapien",
+    "password": "SfwJQAB"
+  }
+]
