@@ -1,11 +1,9 @@
 package com.gmail.dimaliahov.model.Enamu;
 
+import com.gmail.dimaliahov.model.Personage;
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data
 public class Subject {
@@ -18,6 +16,8 @@ public class Subject {
     @Column(name = "namesubject")
     private String nameSubject;
 
+    @ManyToOne
+    private Personage personage;
 
 
 }
